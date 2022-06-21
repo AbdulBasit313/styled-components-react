@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider } from 'styled-components'
+import { device } from './styles/BreakPoints'
+import { GlobalStyles } from './styles/Global'
+import { theme } from './styles/Theme'
+
+const Title = styled.h1`
+  color: ${(props) => props.theme.colors.primaryTextColor};
+  font-size: 48px;
+  @media ${device.md} {
+    font-size: 32px;
+  }
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Title>Hello World!</Title>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
