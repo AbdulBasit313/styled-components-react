@@ -15,5 +15,3 @@ export const device = {
   xl: `(max-width: ${size.xl})`,
   xxl: `(max-width: ${size.xxl})`,
 }
-
-// my laptop view port 1280px
