@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  font-family: ${({ theme }) => theme.fonts.poppins}, sans-serif;
+  font-family: ${({ theme }) => theme.fonts.anekMalayalam}, sans-serif;
   font-size: 1rem;
   color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.background};

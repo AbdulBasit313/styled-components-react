@@ -19,7 +19,7 @@ export const theme = {
     success: '#66A15A',
   },
   fonts: {
-    poppins: 'Poppins',
+    anekMalayalam: 'Anek Malayalam',
   },
   paddings: {
     container: '15px',
