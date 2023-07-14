@@ -4,14 +4,14 @@ import { GlobalStyles } from './styles/Global'
 import { theme } from './styles/Theme'
 
 const Title = styled.h1`
-  color: ${(props) => props.theme.colors.primaryTextColor};
+  color: ${({ theme }) => theme.colors.primaryTextColor};
   font-size: 48px;
   @media ${device.md} {
     font-size: 32px;
   }
 `
 
-const P100 = styled.h1`
+const P100 = styled.p`
   font-size: 10px;
   font-weight: 100;
   color: ${({ theme }) => theme.colors.secondaryTextColor};
@@ -31,7 +31,7 @@ const P400 = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.secondaryTextColor};
 `
-const P500 = styled.p`
+const P500 = styled.h4`
   font-size: 26px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.secondaryTextColor};
@@ -46,7 +46,6 @@ const H2 = styled.h2`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.secondaryTextColor};
 `
-
 const H1 = styled.h1`
   font-size: 40px;
   font-weight: 800;

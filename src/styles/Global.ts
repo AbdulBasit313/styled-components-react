@@ -113,42 +113,64 @@ export const SmallContainer = styled.div`
   padding: 0 ${({ theme }) => theme.paddings.container};
 `
 
-export const Grid = styled.div`
+interface GridProps {
+  columns?: number
+  end?: boolean
+  cgp?: number
+  pt?: number
+  pb?: number
+  fullHeight?: boolean
+  py?: number
+}
+
+export const Grid = styled.div<GridProps>`
   display: grid;
   grid-template-columns: repeat(${({ columns }) => columns || 2}, 1fr);
   justify-items: ${({ end }) => end && 'end'};
   grid-column-gap: calc(${({ cgp }) => cgp} * 1px);
+
   ${({ pt }) =>
     pt &&
     css`
       padding-top: calc(${pt} * 1px);
     `}
+
   ${({ pb }) =>
     pb &&
     css`
       padding-bottom: calc(${pb} * 1px);
     `}
+
   ${({ fullHeight }) =>
     fullHeight &&
     css`
       height: 100%;
     `}
+
   ${({ py }) =>
     py &&
     css`
-      padding-top: calc(${py}* 1px);
-      padding-bottom: calc(${py}* 1px);
+      padding-top: calc(${py} * 1px);
+      padding-bottom: calc(${py} * 1px);
     `}
 `
 
-export const Box = styled.div`
+interface BoxProps {
+  mt?: number
+  flxRight?: boolean
+  smNone?: boolean
+}
+
+export const Box = styled.div<BoxProps>`
   margin-top: calc(${({ mt }) => mt} * 1px);
+
   ${({ flxRight }) =>
     flxRight &&
     css`
       display: flex;
       justify-content: flex-end;
     `}
+
   ${({ smNone }) =>
     smNone &&
     css`
@@ -172,4 +194,48 @@ export const SmallDevicesHidden = css`
   @media ${device.sm} {
     display: none;
   }
+`
+
+interface FlexProps {
+  center?: boolean
+  spaceBetween?: boolean
+  flxEnd?: boolean
+  gap?: string
+  // Add any other necessary props
+}
+
+export const Flex = styled.div<FlexProps>`
+  display: flex;
+  ${({ center }) =>
+    center &&
+    css`
+      justify-content: center;
+      align-items: center;
+    `}
+  ${({ spaceBetween }) =>
+    spaceBetween &&
+    css`
+      justify-content: space-between;
+      align-items: center;
+    `}
+  ${({ flxEnd }) =>
+    flxEnd &&
+    css`
+      justify-content: flex-end;
+      align-items: center;
+    `}
+  ${({ gap }) =>
+    gap &&
+    css`
+      gap: ${gap};
+    `}
+`
+
+interface ResizableBoxProps {
+  width: string | number
+}
+
+export const ResizableBox = styled.div<ResizableBoxProps>`
+  width: ${(props) =>
+    typeof props.width === 'string' ? props.width : `${props.width}px`};
 `
