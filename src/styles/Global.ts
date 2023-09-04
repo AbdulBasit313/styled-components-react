@@ -24,8 +24,8 @@ body {
   text-rendering: optimizeSpeed;
   font-family: ${({ theme }) => theme.fonts.anekMalayalam}, sans-serif;
   font-size: 1rem;
-  color: ${({ theme }) => theme.colors.text};
-  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.themeText};
+  background-color: ${({ theme }) => theme.colors.white};
   line-height: 1;
 }
 h1,
@@ -100,10 +100,10 @@ select {
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1360px;
+  max-width: 1100px;
   margin: 0 auto;
-  /* padding: 0 30px; */
   padding: 0 ${({ theme }) => theme.paddings.container};
+  padding-bottom: 50px;
 `
 export const SmallContainer = styled.div`
   width: 100%;
@@ -199,6 +199,7 @@ export const SmallDevicesHidden = css`
 interface FlexProps {
   center?: boolean
   spaceBetween?: boolean
+  evenly?: boolean
   flxEnd?: boolean
   gap?: string
   // Add any other necessary props
@@ -216,6 +217,12 @@ export const Flex = styled.div<FlexProps>`
     spaceBetween &&
     css`
       justify-content: space-between;
+      align-items: center;
+    `}
+  ${({ evenly }) =>
+    evenly &&
+    css`
+      justify-content: space-evenly;
       align-items: center;
     `}
   ${({ flxEnd }) =>

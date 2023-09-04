@@ -1,5 +1,7 @@
 # Styled Components with React and Typescript
 
+![React styled components ui components](./src/assets/images/react-styled-components-ui-components.png)
+
 This guide provides an overview of using Styled Components with React and Typescript to create reusable and easily manageable CSS-in-JS code. Styled Components is a powerful tool that allows you to write styling directly within your React components, providing a more modular and organized approach to styling.
 
 ## Getting Started
@@ -36,6 +38,8 @@ The `Global.ts` file contains global styles for your application. It is where yo
 
 The `Breakpoints.ts` file is used to handle responsive design using media queries. It defines different breakpoints for various screen sizes, allowing your application to adapt and provide the best layout to users. By using media queries in Styled Components, you can easily adjust styles based on the device width.
 
+Read the article ["Styled Components Media Queries for Responsive Styling"](https://www.codevertiser.com/styled-components-media-queries/) to learn about media queries in detail.
+
 ### Fonts.module.css
 
 The `Fonts.module.css` file is used to import and define font styles for your Styled Components. It includes font-face declarations for different font weights and allows you to use custom fonts in your application.
@@ -48,6 +52,16 @@ To use Styled Components in your React components, follow these steps:
 2. Use the `ThemeProvider` component to wrap your application and provide the theme.
 3. Define your styled components using the `styled` function and pass in the desired HTML element or component.
 4. Use the theme variables and breakpoints defined in the `Theme.ts` and `Breakpoints.ts` files to style your components.
+
+## Top UI Components Built with React and Styled Components
+
+Here are the top 5 widely-used React components crafted using TypeScript and Styled Components:
+
+1. Navbar
+2. Button
+3. Input
+4. Radio Button
+5. Progress Steps
 
 ## Further Resources
 
